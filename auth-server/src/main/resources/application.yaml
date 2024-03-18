@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: auth-server
+
+server:
+  port: 8181
+
+rsa:
+  private-key: classpath:/private.pem
+  public-key: classpath:/public.pem

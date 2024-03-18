@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: chirp:feed-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/feeds
+    username: sa
+    password: password
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: HikariCorePool
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, beans, prometheus
+
+FEED_SIZE: 10
+server:
+  port: 8082
+
+rsa.public-key: classpath:/public.pem
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: debug

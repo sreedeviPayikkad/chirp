@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: chirp:tweet-service
+  datasource:
+    url: jdbc:h2:mem:test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: HikariCorePool
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+tweet-minSize: 1
+tweet-maxSize: 250
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, beans, prometheus

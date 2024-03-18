@@ -1,0 +1,134 @@
+dn: ou=groups,dc=intuit,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=intuit,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=intuit,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: ou=space cadets,dc=intuit,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: space cadets
+
+dn: ou=\"quoted people\",dc=intuit,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: "quoted people"
+
+dn: ou=otherpeople,dc=intuit,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: otherpeople
+
+dn: uid=ben,ou=people,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=bob,ou=people,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userPassword: $2a$12$FP3pICN.Yf3NIFPYMyMwI.rwtnXmiZZW1digao1CirQB9HOh6OMwi
+
+dn: uid=sree,ou=people,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: sree
+sn: sree
+uid: sree
+userPassword: $2a$10$vfjYkjfzJC4m58D4uzmZUuEAscXOjPGEnwgd3Uou0MJZS.NmeXnnu
+
+dn: uid=joe,ou=otherpeople,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Joe Smeth
+sn: Smeth
+uid: joe
+userPassword: $2a$12$xc0FFFKyhQHtAeoOCA4dmeV542Bas9xVHQ4.XKQ/TMt8UQHJURyI.
+
+dn: cn=mouse\, jerry,ou=people,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Mouse, Jerry
+sn: Mouse
+uid: jerry
+userPassword: $2a$10$5RsWXSXdb2tp6SWInzmnVegldgihs3UCJW.o7up94DRKSPmFzhi6i
+
+dn: cn=slash/guy,ou=people,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: slash/guy
+sn: Slash
+uid: slashguy
+userPassword: $2y$10$nmeoghYo0Tcp260bOwCdSuCa45jDTbQVbm84Cejk.7.w/mccXb8zu
+
+dn: cn=quote\"guy,ou=\"quoted people\",dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: quote\"guy
+sn: Quote
+uid: quoteguy
+userPassword: quoteguyspassword
+
+dn: uid=space cadet,ou=space cadets,dc=intuit,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Space Cadet
+sn: Cadet
+uid: space cadet
+userPassword: spacecadetspassword
+
+
+
+dn: cn=developers,ou=groups,dc=intuit,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=ben,ou=people,dc=intuit,dc=com
+uniqueMember: uid=bob,ou=people,dc=intuit,dc=com
+
+dn: cn=managers,ou=groups,dc=intuit,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=ben,ou=people,dc=intuit,dc=com
+uniqueMember: cn=mouse\, jerry,ou=people,dc=intuit,dc=com
+
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=intuit,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: submanagers
+ou: submanager
+uniqueMember: uid=ben,ou=people,dc=intuit,dc=com

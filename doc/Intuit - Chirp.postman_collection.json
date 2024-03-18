@@ -1,0 +1,734 @@
+{
+	"info": {
+		"_postman_id": "bff8d679-40df-4b2d-83ac-56e379fbfb0c",
+		"name": "Intuit - Chirp",
+		"description": "<img src=\"https://content.pstmn.io/ee80d1ea-a714-4c89-ae36-16c1f02499ab/aW1hZ2UucG5n\" alt=\"\" height=\"430\" width=\"936\">",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28786439"
+	},
+	"item": [
+		{
+			"name": "feed-service",
+			"item": [
+				{
+					"name": "/feeds",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "bobspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bob",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/feeds?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"feeds"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/feeds with token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "bobspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bob",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/feeds?id=1&token=88a649cc-5414-4058-851a-edbbfbd407ac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"feeds"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "token",
+									"value": "88a649cc-5414-4058-851a-edbbfbd407ac"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The logged in user could fetch latest feeds from the peple they follow"
+		},
+		{
+			"name": "tweet-service",
+			"item": [
+				{
+					"name": "tweet - ben",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "benspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ben",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\" : \"helloo!\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tweet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tweet - bob",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "bobspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bob",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\" : \"Good Morning!\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tweet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tweet - slashguy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "slashguyspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "slashguy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\" : \"Sunday, yay!\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tweet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all following ids",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "bobspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bob",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/following",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"following"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create following",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "bobspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bob",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/following",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"following"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete following per ids",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "bobspassword",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bob",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" :  3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/following",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"following"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The logged in user could tweet content, follow and unfollow other users"
+		},
+		{
+			"name": "config - CDC",
+			"item": [
+				{
+					"name": "add src connector",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"tweets-source\",\n    \"config\": {\n        \"connector.class\": \"io.debezium.connector.postgresql.PostgresConnector\",\n        \"database.hostname\": \"host.docker.internal\",\n        \"database.port\": \"5432\",\n        \"database.user\": \"sa\",\n        \"database.password\": \"password\",\n        \"database.dbname\": \"tweets\",\n        \"table.whitelist\": \"tweets\",\n        \"topic.prefix\": \"chirp\",\n        \"plugin.name\": \"pgoutput\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sink Connector Config - Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"users_sink_11\",\n    \"config\": {\n        \"connector.class\": \"io.confluent.connect.jdbc.JdbcSinkConnector\",\n        \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n        \"key.converter.schema.registry.url\": \"http://localhost:8081\",\n        \"tasks.max\": \"1\",\n        \"topics\": \"chirp.public.users\",\n        \"auto.create\": \"true\",\n        \"connection.url\": \"jdbc:postgresql://host.docker.internal:5433/feeds?user=sa&password=password\",\n        \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n        \"key.converter\": \"io.confluent.connect.avro.AvroConverter\",\n        \"table.name.format\": \"public.users\",\n\n        \"transforms\": \"ExtractField,ConvertTimestamp\",\n        \"transforms.ExtractField.type\": \"org.apache.kafka.connect.transforms.ExtractField$Value\",\n        \"transforms.ExtractField.field\": \"after\",\n        \"transforms.ConvertTimestamp.type\": \"org.apache.kafka.connect.transforms.TimestampConverter$Value\",\n        \"transforms.ConvertTimestamp.field\": \"created_at\",\n        \"transforms.ConvertTimestamp.format\": \"yyyy-MM-dd'T'hh:mm:ss.SSSZ\",\n        \"transforms.ConvertTimestamp.target.type\": \"string\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sink Connector Config - following",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"following_sink\",\n        \"config\": {\n            \"connector.class\": \"io.confluent.connect.jdbc.JdbcSinkConnector\",\n            \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n            \"key.converter.schema.registry.url\": \"http://localhost:8081\",\n            \"tasks.max\": \"1\",\n            \"topics\": \"chirp.public.following\",\n            \"auto.create\": \"true\",\n            \"connection.url\": \"jdbc:postgresql://host.docker.internal:5433/feeds?user=sa&password=password\",\n            \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n            \"key.converter\": \"io.confluent.connect.avro.AvroConverter\",\n            \"table.name.format\": \"public.following\",\n            \n            \"transforms\": \"ExtractField,ConvertTimestamp\",\n            \"transforms.ExtractField.type\": \"org.apache.kafka.connect.transforms.ExtractField$Value\",\n            \"transforms.ExtractField.field\": \"after\",\n            \"transforms.ConvertTimestamp.type\": \"org.apache.kafka.connect.transforms.TimestampConverter$Value\",\n            \"transforms.ConvertTimestamp.field\": \"created_at\",\n            \"transforms.ConvertTimestamp.unix.precision\": \"microseconds\",\n            \"transforms.ConvertTimestamp.format\": \"yyyy-MM-dd hh:mm:ss\",\n            \"transforms.ConvertTimestamp.target.type\": \"Timestamp\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sink Connector for Tweet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"tweets_sink\",\n    \"config\": {\n        \"connector.class\": \"io.confluent.connect.jdbc.JdbcSinkConnector\",\n        \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n        \"key.converter.schema.registry.url\": \"http://localhost:8081\",\n        \"tasks.max\": \"1\",\n        \"topics\": \"chirp.public.tweet\",\n        \"auto.create\": \"true\",\n        \"connection.url\": \"jdbc:postgresql://host.docker.internal:5433/feeds?user=sa&password=password\",\n        \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n        \"key.converter\": \"io.confluent.connect.avro.AvroConverter\",\n        \"table.name.format\": \"public.tweet\",\n\n        \"transforms\": \"ExtractField,ConvertTimestamp\",\n        \"transforms.ExtractField.type\": \"org.apache.kafka.connect.transforms.ExtractField$Value\",\n        \"transforms.ExtractField.field\": \"after\",\n        \"transforms.ConvertTimestamp.type\": \"org.apache.kafka.connect.transforms.TimestampConverter$Value\",\n        \"transforms.ConvertTimestamp.field\": \"created_at\",\n        \"transforms.ConvertTimestamp.unix.precision\": \"microseconds\",\n        \"transforms.ConvertTimestamp.format\": \"yyyy-MM-dd hh:mm:ss\",\n        \"transforms.ConvertTimestamp.target.type\": \"Timestamp\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "APIs intended to create source and sink connectors to enable change data capture"
+		},
+		{
+			"name": "tweet health check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tweets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tweets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1550"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2024 04:48:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n        <meta name=\"description\" content=\"\">\n        <meta name=\"author\" content=\"\">\n        <title>Please sign in</title>\n        <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n        <link href=\"https://getbootstrap.com/docs/4.0/examples/signin/signin.css\" rel=\"stylesheet\" integrity=\"sha384-oOE/3m0LUMPub4kaC09mrdEhIc+e3exm4xOGxAmuFXhBNF4hcg/6MiAXAf5p0P56\" crossorigin=\"anonymous\"/>\n    </head>\n    <body>\n        <div class=\"container\">\n            <form class=\"form-signin\" method=\"post\" action=\"/login\">\n                <h2 class=\"form-signin-heading\">Please sign in</h2>\n                <p>\n                    <label for=\"username\" class=\"sr-only\">Username</label>\n                    <input type=\"text\" id=\"username\" name=\"username\" class=\"form-control\" placeholder=\"Username\" required autofocus>\n        \n                </p>\n                <p>\n                    <label for=\"password\" class=\"sr-only\">Password</label>\n                    <input type=\"password\" id=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" required>\n        \n                </p>\n                <input name=\"_csrf\" type=\"hidden\" value=\"yLNnvSTeiiHLotY7ZGgmmxxcB6dU6iG9afjYhLjpBlPWIL83-YcCihTmukPmkOIJAkUSqy5oKsVs2UOQDZ7ut96LPmrkQYoB\" />\n                <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>\n            </form>\n        </div>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "feed health check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tweets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tweets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1550"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2024 04:48:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n        <meta name=\"description\" content=\"\">\n        <meta name=\"author\" content=\"\">\n        <title>Please sign in</title>\n        <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n        <link href=\"https://getbootstrap.com/docs/4.0/examples/signin/signin.css\" rel=\"stylesheet\" integrity=\"sha384-oOE/3m0LUMPub4kaC09mrdEhIc+e3exm4xOGxAmuFXhBNF4hcg/6MiAXAf5p0P56\" crossorigin=\"anonymous\"/>\n    </head>\n    <body>\n        <div class=\"container\">\n            <form class=\"form-signin\" method=\"post\" action=\"/login\">\n                <h2 class=\"form-signin-heading\">Please sign in</h2>\n                <p>\n                    <label for=\"username\" class=\"sr-only\">Username</label>\n                    <input type=\"text\" id=\"username\" name=\"username\" class=\"form-control\" placeholder=\"Username\" required autofocus>\n        \n                </p>\n                <p>\n                    <label for=\"password\" class=\"sr-only\">Password</label>\n                    <input type=\"password\" id=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" required>\n        \n                </p>\n                <input name=\"_csrf\" type=\"hidden\" value=\"yLNnvSTeiiHLotY7ZGgmmxxcB6dU6iG9afjYhLjpBlPWIL83-YcCihTmukPmkOIJAkUSqy5oKsVs2UOQDZ7ut96LPmrkQYoB\" />\n                <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>\n            </form>\n        </div>\n    </body>\n</html>"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/rel-1.0.yaml
+  - include:
+      file: classpath:/db/changelog/changeset-add_token_data_table.yaml
+  - include:
+      file: classpath:/db/changelog/changeset-add_index_userid_tweets_table.yaml

@@ -1,0 +1,14 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  createIndex-tweet_userid
+       author:  admin
+       changes:
+         - createIndex:
+             clustered:  true
+             columns:
+               - column:
+                   name:  user_id
+             indexName:  idx_user_id
+             schemaName:  public
+             tableName:  tweet
+

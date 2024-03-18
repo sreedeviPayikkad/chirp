@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - createTable:
+            tableName: token_data
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: data
+                  type: bytea
+                  constraints:
+                    nullable: false

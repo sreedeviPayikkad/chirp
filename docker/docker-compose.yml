@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tweets
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    
+  postgres_ro:
+    image: postgres:latest
+    container_name: postgres_db_ro
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: feeds
+    volumes:
+      - postgres_data_ro:/var/lib/postgresql/data
+
+  lenses:
+    image: lensesio/box:latest
+    ports:
+      - "3030:3030"
+      - "9092:9092"
+      - "8083:8083"
+    environment:
+      - ADV_HOST=127.0.0.1
+      - EULA=https://licenses.lenses.io/d/?id=d5f95d60-df5b-11ee-bf14-42010af01003
+    networks:
+      - bridge
+  
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    volumes:
+      - prometheus-data:/prometheus
+      - ./prometheus:/etc/prometheus
+    command: --config.file=/etc/prometheus/config.yml
+  
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  postgres_data:
+  postgres_data_ro:
+  prometheus-data:
+  grafana-data:
+  redis_data:
+
+networks:
+  bridge:
+    driver: bridge
